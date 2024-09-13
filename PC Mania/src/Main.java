@@ -20,16 +20,13 @@ public class Main {
         computador2.setHardware(new HardwareBasico("Acer", 1000, "Pentium core i5 3370 Mhz", 16));
         computador3.setHardware(new HardwareBasico("Vaio", 2000, "Pentium core i7 4500 Mhz", 32));
 
-
         computador1.setMusb(new MemoriaUSB("16 GB"));
         computador2.setMusb(new MemoriaUSB("32 GB"));
         computador3.setMusb(new MemoriaUSB("1 Tera"));
 
-
         System.out.println(" ");
-        System.out.println("Ola, seja bem vindo à loja PC Mania!!");
-        System.out.println("Aqui estamos com 3 promoções imperdiveis, senhor. Vou lhe apresentar:");
-
+        System.out.println("Olá, seja bem-vindo à loja PC Mania!!");
+        System.out.println("Aqui estamos com 3 promoções imperdíveis, senhor. Vou lhe apresentar:");
 
         System.out.println(" ");
         computador1.mostraPCconfigs();
@@ -44,13 +41,16 @@ public class Main {
         int continua;
         float total = 0;
         System.out.println("Qual deles você deseja escolher? Lembrando que você pode comprar mais de um kkkk");
+
         while (i < 3) {
             System.out.print("Escolha uma opção (1, 2, 3): ");
             contador[i] = input.nextInt();
+
             if (contador[i] < 1 || contador[i] > 3) {
-                System.out.println("essa opcao nao da, escolhe de novo");
+                System.out.println("Essa opção não é válida, escolha de novo.");
                 continue;
             }
+
             System.out.print("Deseja continuar? 1 para sim, 2 para não: ");
             continua = input.nextInt();
             if (continua == 2) {
@@ -60,22 +60,16 @@ public class Main {
         }
 
         for (int j = 0; j < i; j++) {
-            if (contador[j] >= 1 && contador[j] <= 3) {
-                switch (contador[j]) {
-                    case 1:
-                        total += computador1.getPreco();
-                        break;
-                    case 2:
-                        total += computador2.getPreco();
-                        break;
-                    case 3:
-                        total += computador3.getPreco();
-                        break;
-                }
+            if (contador[j] == 1) {
+                total += computador1.getPreco();
+            } else if (contador[j] == 2) {
+                total += computador2.getPreco();
+            } else if (contador[j] == 3) {
+                total += computador3.getPreco();
             }
-
-            System.out.println("O total deu: " + total + " Reais.");
-            input.close();
         }
+
+        System.out.println("O total deu: " + total + " Reais.");
+        input.close();
     }
 }
