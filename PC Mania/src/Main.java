@@ -24,32 +24,32 @@ public class Main {
         computador2.setMusb(new MemoriaUSB("32 GB"));
         computador3.setMusb(new MemoriaUSB("1 Tera"));
 
-        System.out.println(" ");
-        System.out.println("Olá, seja bem-vindo à loja PC Mania!!");
-        System.out.println("Aqui estamos com 3 promoções imperdíveis, senhor. Vou lhe apresentar:");
+        System.out.println("\nOlá, seja bem-vindo à loja PC Mania!!");
+        System.out.println("Aqui estamos com 3 promoções imperdíveis, senhor. Vou lhe apresentar:\n");
 
-        System.out.println(" ");
         computador1.mostraPCconfigs();
-        System.out.println(" ");
+        System.out.println();
         computador2.mostraPCconfigs();
-        System.out.println(" ");
+        System.out.println();
         computador3.mostraPCconfigs();
-        System.out.println(" ");
+        System.out.println();
 
         int[] contador = new int[3];
         int i = 0;
         int continua;
         float total = 0;
-        System.out.println("Qual deles você deseja escolher? Lembrando que você pode comprar mais de um kkkk");
+        System.out.println("Qual deles você deseja escolher? Lembrando que você pode comprar mais de um!");
 
         while (i < 3) {
             System.out.print("Escolha uma opção (1, 2, 3): ");
-            contador[i] = input.nextInt();
+            int opcao = input.nextInt();
 
-            if (contador[i] < 1 || contador[i] > 3) {
+            if (opcao < 1 || opcao > 3) {
                 System.out.println("Essa opção não é válida, escolha de novo.");
                 continue;
             }
+
+            contador[i] = opcao;
 
             System.out.print("Deseja continuar? 1 para sim, 2 para não: ");
             continua = input.nextInt();
@@ -59,7 +59,7 @@ public class Main {
             i++;
         }
 
-        for (int j = 0; j < i; j++) {
+        for (int j = 0; j <= i; j++) {
             if (contador[j] == 1) {
                 total += computador1.getPreco();
             } else if (contador[j] == 2) {
