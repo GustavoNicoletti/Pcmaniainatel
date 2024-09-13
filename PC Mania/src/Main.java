@@ -25,7 +25,7 @@ public class Main {
         computador3.setMusb(new MemoriaUSB("1 Tera"));
 
         System.out.println("\nOlá, seja bem-vindo à loja PC Mania!!");
-        System.out.println("Aqui estamos com 3 promoções imperdíveis, senhor. Vou lhe apresentar:\n");
+        System.out.println("Aqui estamos com 3 promoções imperdíveis, senhor. Vou te apresentar:\n");
 
         computador1.mostraPCconfigs();
         System.out.println();
@@ -38,7 +38,7 @@ public class Main {
         int i = 0;
         int continua;
         float total = 0;
-        System.out.println("Qual deles você deseja escolher? Lembrando que você pode comprar mais de um!");
+        System.out.println("Qual deles você deseja escolher? Lembrando que você pode comprar mais de um kkkk");
 
         while (i < 3) {
             System.out.print("Escolha uma opção (1, 2, 3): ");
